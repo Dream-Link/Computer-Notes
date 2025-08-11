@@ -1,0 +1,1856 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>राजस्थान कंप्यूटर गाइड - Complete Competitive Exam Preparation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700;800&display=swap');
+        body { 
+            font-family: 'Noto Sans Devanagari', sans-serif; 
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        /* Mobile First Responsive Design */
+        .container { max-width: 100%; padding: 0 8px; }
+        @media (min-width: 640px) { .container { padding: 0 16px; } }
+        @media (min-width: 1024px) { .container { max-width: 1200px; margin: 0 auto; } }
+        
+        /* Compact Mobile Layout */
+        .mobile-card { 
+            background: white; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+            margin-bottom: 12px; 
+            padding: 12px;
+        }
+        
+        .mobile-grid { 
+            display: grid; 
+            grid-template-columns: 1fr; 
+            gap: 8px; 
+        }
+        @media (min-width: 640px) { 
+            .mobile-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; } 
+        }
+        @media (min-width: 1024px) { 
+            .mobile-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; } 
+        }
+        
+        /* Enhanced Windows Style */
+        .windows-window { 
+            background: #f0f0f0; 
+            border: 2px outset #c0c0c0; 
+            box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .windows-titlebar { 
+            background: linear-gradient(to right, #0078d4, #106ebe); 
+            color: white; 
+            padding: 6px 12px; 
+            font-size: 12px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            font-weight: 500;
+        }
+        .windows-button { 
+            background: #e1e1e1; 
+            border: 1px outset #c0c0c0; 
+            padding: 2px 8px; 
+            font-size: 10px; 
+            cursor: pointer;
+            min-width: 20px;
+            text-align: center;
+        }
+        .windows-button:hover { background: #d4d4d4; }
+        .windows-button:active { border: 1px inset #c0c0c0; }
+        
+        /* Advanced Hardware Components */
+        .hardware-3d {
+            background: linear-gradient(145deg, #f0f0f0, #e0e0e0);
+            border: 2px solid #ccc;
+            border-radius: 12px;
+            padding: 16px;
+            margin: 8px 0;
+            box-shadow: 4px 4px 12px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .hardware-3d:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 6px 6px 20px rgba(0,0,0,0.3);
+        }
+        .hardware-3d::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+        .hardware-3d:hover::before {
+            left: 100%;
+        }
+        
+        /* Realistic CPU Design */
+        .cpu-realistic {
+            background: linear-gradient(45deg, #2c3e50, #34495e, #2c3e50);
+            border: 3px solid #1a252f;
+            position: relative;
+            border-radius: 8px;
+        }
+        .cpu-realistic::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            background: repeating-linear-gradient(
+                0deg,
+                #34495e 0px,
+                #34495e 2px,
+                #2c3e50 2px,
+                #2c3e50 4px
+            );
+            border-radius: 4px;
+        }
+        
+        /* RAM Stick Design */
+        .ram-realistic {
+            background: linear-gradient(to bottom, #27ae60, #2ecc71, #27ae60);
+            border: 2px solid #1e8449;
+            position: relative;
+            border-radius: 6px;
+        }
+        .ram-realistic::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 20%;
+            right: 20%;
+            height: 4px;
+            background: #f39c12;
+            border-radius: 2px;
+        }
+        .ram-realistic::after {
+            content: '';
+            position: absolute;
+            bottom: 8px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: repeating-linear-gradient(
+                90deg,
+                #f39c12 0px,
+                #f39c12 4px,
+                transparent 4px,
+                transparent 8px
+            );
+        }
+        
+        /* Motherboard Design */
+        .motherboard-realistic {
+            background: linear-gradient(45deg, #2d5016, #3e6b1f, #2d5016);
+            border: 2px solid #1a2f0c;
+            position: relative;
+            border-radius: 8px;
+        }
+        .motherboard-realistic::before {
+            content: '';
+            position: absolute;
+            inset: 8px;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 2px,
+                rgba(255,255,255,0.1) 2px,
+                rgba(255,255,255,0.1) 4px
+            );
+            border-radius: 4px;
+        }
+        
+        /* Enhanced Office Interfaces */
+        .office-realistic { 
+            background: #ffffff; 
+            border: 1px solid #d1d5db; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .excel-cell-enhanced { 
+            border: 1px solid #d1d5db; 
+            padding: 6px 10px; 
+            text-align: left; 
+            background: white; 
+            font-size: 12px;
+            min-width: 80px;
+            transition: all 0.2s;
+        }
+        .excel-cell-enhanced:hover { background: #f8f9fa; }
+        .excel-cell-enhanced:focus { 
+            background: #fff; 
+            border-color: #0078d4; 
+            outline: none; 
+            box-shadow: 0 0 0 2px rgba(0,120,212,0.2);
+        }
+        .excel-header-enhanced { 
+            background: linear-gradient(to bottom, #f8f9fa, #e9ecef); 
+            font-weight: 600; 
+            text-align: center;
+            color: #495057;
+            border-bottom: 2px solid #dee2e6;
+        }
+        
+        /* Advanced System Monitor */
+        .system-monitor-advanced {
+            background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+            color: #00ff41;
+            font-family: 'Courier New', 'Lucida Console', monospace;
+            padding: 16px;
+            border-radius: 8px;
+            font-size: 11px;
+            border: 2px solid #333;
+            box-shadow: inset 0 0 20px rgba(0,255,65,0.1);
+        }
+        
+        /* Realistic Progress Bars */
+        .progress-advanced {
+            background: linear-gradient(to right, #e0e0e0, #f0f0f0);
+            border-radius: 12px;
+            overflow: hidden;
+            height: 24px;
+            border: 1px solid #ccc;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .progress-fill-advanced {
+            height: 100%;
+            background: linear-gradient(45deg, #4CAF50, #45a049, #4CAF50);
+            transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .progress-fill-advanced::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                90deg,
+                transparent 0%,
+                rgba(255,255,255,0.3) 50%,
+                transparent 100%
+            );
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        /* Enhanced Printer Animation */
+        .printer-working {
+            animation: printing 1.5s infinite ease-in-out;
+        }
+        @keyframes printing {
+            0%, 100% { transform: translateX(0) scale(1); }
+            25% { transform: translateX(5px) scale(1.02); }
+            50% { transform: translateX(10px) scale(1.05); }
+            75% { transform: translateX(5px) scale(1.02); }
+        }
+        
+        /* Network Visualization */
+        .network-node {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            position: relative;
+        }
+        .network-node::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 2px solid rgba(52, 152, 219, 0.3);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.8); opacity: 1; }
+            100% { transform: scale(1.2); opacity: 0; }
+        }
+        
+        /* Question Bank Styles */
+        .question-card {
+            background: white;
+            border-left: 4px solid #3498db;
+            padding: 16px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .question-card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            transform: translateX(4px);
+        }
+        .question-card.correct { border-left-color: #27ae60; background: #f8fff8; }
+        .question-card.incorrect { border-left-color: #e74c3c; background: #fff8f8; }
+        
+        .option-btn {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            padding: 8px 16px;
+            margin: 4px 0;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: block;
+            width: 100%;
+            text-align: left;
+        }
+        .option-btn:hover { background: #e9ecef; border-color: #3498db; }
+        .option-btn.selected { background: #3498db; color: white; border-color: #2980b9; }
+        .option-btn.correct { background: #27ae60; color: white; border-color: #229954; }
+        .option-btn.incorrect { background: #e74c3c; color: white; border-color: #c0392b; }
+        
+        /* Compact Navigation */
+        .nav-compact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            padding: 8px;
+            background: #2c3e50;
+            border-radius: 8px;
+            margin: 8px 0;
+        }
+        .nav-compact button {
+            padding: 6px 12px;
+            font-size: 11px;
+            border-radius: 4px;
+            border: none;
+            background: #34495e;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s;
+            flex: 1;
+            min-width: 80px;
+        }
+        .nav-compact button:hover { background: #3498db; }
+        .nav-compact button.active { background: #e74c3c; }
+        
+        /* Loading States */
+        .loading-dots {
+            display: inline-block;
+        }
+        .loading-dots::after {
+            content: '';
+            animation: dots 1.5s infinite;
+        }
+        @keyframes dots {
+            0%, 20% { content: ''; }
+            40% { content: '.'; }
+            60% { content: '..'; }
+            80%, 100% { content: '...'; }
+        }
+        
+        /* Tooltip System */
+        .tooltip {
+            position: relative;
+            cursor: help;
+        }
+        .tooltip::before {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 11px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            z-index: 1000;
+        }
+        .tooltip:hover::before {
+            opacity: 1;
+        }
+        
+        /* Exam Timer */
+        .exam-timer {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3);
+            animation: timerPulse 1s infinite alternate;
+        }
+        @keyframes timerPulse {
+            0% { box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3); }
+            100% { box-shadow: 0 4px 16px rgba(231, 76, 60, 0.6); }
+        }
+        
+        /* Score Display */
+        .score-display {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(243, 156, 18, 0.3);
+        }
+        
+        /* Responsive Text */
+        .text-responsive {
+            font-size: 12px;
+            line-height: 1.4;
+        }
+        @media (min-width: 640px) {
+            .text-responsive { font-size: 14px; line-height: 1.5; }
+        }
+        @media (min-width: 1024px) {
+            .text-responsive { font-size: 16px; line-height: 1.6; }
+        }
+        
+        /* Compact Tables */
+        .table-compact {
+            font-size: 11px;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .table-compact th,
+        .table-compact td {
+            padding: 6px 8px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        .table-compact th {
+            background: #f8f9fa;
+            font-weight: 600;
+        }
+        
+        /* Mobile Optimizations */
+        @media (max-width: 640px) {
+            .mobile-hide { display: none; }
+            .mobile-full { width: 100% !important; }
+            .mobile-text-sm { font-size: 12px !important; }
+            .mobile-p-2 { padding: 8px !important; }
+            .mobile-m-1 { margin: 4px !important; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+    <!-- Compact Header -->
+    <header class="bg-gradient-to-r from-indigo-800 to-purple-800 text-white shadow-lg sticky top-0 z-50">
+        <div class="container py-3">
+            <h1 class="text-lg md:text-2xl font-bold text-center">🏆 राजस्थान कंप्यूटर गाइड</h1>
+            <p class="text-center text-xs md:text-sm text-indigo-200 mt-1">RSCIT | RKCL | Patwar | Police | Teacher Exams</p>
+        </div>
+    </header>
+
+    <!-- Compact Navigation -->
+    <nav class="container">
+        <div class="nav-compact">
+            <button onclick="showSection('introduction')" class="nav-btn active">परिचय</button>
+            <button onclick="showSection('hardware')" class="nav-btn">हार्डवेयर</button>
+            <button onclick="showSection('software')" class="nav-btn">सॉफ्टवेयर</button>
+            <button onclick="showSection('os')" class="nav-btn">OS</button>
+            <button onclick="showSection('word')" class="nav-btn">Word</button>
+            <button onclick="showSection('excel')" class="nav-btn">Excel</button>
+            <button onclick="showSection('powerpoint')" class="nav-btn">PPT</button>
+            <button onclick="showSection('internet')" class="nav-btn">इंटरनेट</button>
+            <button onclick="showSection('email')" class="nav-btn">ईमेल</button>
+            <button onclick="showSection('network')" class="nav-btn">नेटवर्क</button>
+            <button onclick="showSection('security')" class="nav-btn">सिक्यूरिटी</button>
+            <button onclick="showSection('questions')" class="nav-btn">प्रश्न बैंक</button>
+        </div>
+    </nav>
+
+    <div class="container py-4">
+        <!-- Computer Introduction Section - Enhanced -->
+        <section id="introduction" class="section">
+            <div class="mobile-card">
+                <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                    💻 कंप्यूटर का संपूर्ण परिचय
+                </h2>
+                
+                <div class="mobile-grid">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3 text-indigo-700">कंप्यूटर की परिभाषा</h3>
+                        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-lg mb-4">
+                            <p class="text-responsive text-gray-700">
+                                <strong>Computer</strong> शब्द लैटिन भाषा के "Computare" से आया है, जिसका अर्थ है "गणना करना"। 
+                                यह एक इलेक्ट्रॉनिक मशीन है जो डेटा को Input के रूप में लेती है, उसे Process करती है, 
+                                और परिणाम को Output के रूप में देती है।
+                            </p>
+                        </div>
+                        
+                        <h3 class="text-lg font-semibold mb-3 text-indigo-700">कंप्यूटर की विशेषताएं</h3>
+                        <div class="space-y-3">
+                            <div class="bg-green-50 p-3 rounded-lg border-l-4 border-green-500">
+                                <h4 class="font-semibold text-green-800 flex items-center text-sm">
+                                    ⚡ गति (Speed) - 10^9 operations/second
+                                </h4>
+                                <p class="text-xs text-gray-700 mt-1">आधुनिक कंप्यूटर 1 सेकंड में अरबों गणनाएं कर सकते हैं</p>
+                            </div>
+                            <div class="bg-blue-50 p-3 rounded-lg border-l-4 border-blue-500">
+                                <h4 class="font-semibold text-blue-800 flex items-center text-sm">
+                                    🎯 सटीकता (Accuracy) - 100% Error-free
+                                </h4>
+                                <p class="text-xs text-gray-700 mt-1">GIGO (Garbage In Garbage Out) के सिद्धांत पर काम करता है</p>
+                            </div>
+                            <div class="bg-purple-50 p-3 rounded-lg border-l-4 border-purple-500">
+                                <h4 class="font-semibold text-purple-800 flex items-center text-sm">
+                                    💾 भंडारण (Storage) - Petabytes तक
+                                </h4>
+                                <p class="text-xs text-gray-700 mt-1">Primary (RAM) और Secondary (HDD/SSD) Memory</p>
+                            </div>
+                            <div class="bg-orange-50 p-3 rounded-lg border-l-4 border-orange-500">
+                                <h4 class="font-semibold text-orange-800 flex items-center text-sm">
+                                    🔄 स्वचालन (Automation) - 24x7 Operation
+                                </h4>
+                                <p class="text-xs text-gray-700 mt-1">बिना थके लगातार काम कर सकता है</p>
+                            </div>
+                            <div class="bg-red-50 p-3 rounded-lg border-l-4 border-red-500">
+                                <h4 class="font-semibold text-red-800 flex items-center text-sm">
+                                    🤖 विश्वसनीयता (Reliability) - MTBF > 10,000 hours
+                                </h4>
+                                <p class="text-xs text-gray-700 mt-1">Mean Time Between Failures बहुत अधिक होता है</p>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-semibold mb-3 mt-6 text-indigo-700">कंप्यूटर की सीमाएं</h3>
+                        <div class="bg-yellow-50 p-4 rounded-lg">
+                            <ul class="text-sm space-y-2 text-gray-700">
+                                <li class="flex items-start"><span class="text-red-500 mr-2">✗</span> स्वयं सोच नहीं सकता (No Intelligence)</li>
+                                <li class="flex items-start"><span class="text-red-500 mr-2">✗</span> भावनाएं नहीं समझता (No Emotions)</li>
+                                <li class="flex items-start"><span class="text-red-500 mr-2">✗</span> बिजली पर निर्भर (Power Dependent)</li>
+                                <li class="flex items-start"><span class="text-red-500 mr-2">✗</span> वायरस का खतरा (Virus Threat)</li>
+                                <li class="flex items-start"><span class="text-red-500 mr-2">✗</span> महंगा रखरखाव (Expensive Maintenance)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3 text-indigo-700">कंप्यूटर के प्रकार (विस्तार से)</h3>
+                        
+                        <!-- Size के आधार पर -->
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-sm mb-2 text-purple-700">📏 आकार के आधार पर:</h4>
+                            <div class="mobile-grid">
+                                <div class="bg-white border-2 border-gray-200 p-3 rounded-lg text-center hover:shadow-lg transition-shadow">
+                                    <div class="text-2xl mb-2">🖥️</div>
+                                    <h5 class="font-semibold text-gray-800 text-sm">Supercomputer</h5>
+                                    <p class="text-xs text-gray-600">Speed: 10^18 FLOPS<br>Ex: PARAM, Cray</p>
+                                </div>
+                                <div class="bg-white border-2 border-gray-200 p-3 rounded-lg text-center hover:shadow-lg transition-shadow">
+                                    <div class="text-2xl mb-2">🏢</div>
+                                    <h5 class="font-semibold text-gray-800 text-sm">Mainframe</h5>
+                                    <p class="text-xs text-gray-600">Multi-user, High Storage<br>Ex: IBM z15</p>
+                                </div>
+                                <div class="bg-white border-2 border-gray-200 p-3 rounded-lg text-center hover:shadow-lg transition-shadow">
+                                    <div class="text-2xl mb-2">🖨️</div>
+                                    <h5 class="font-semibold text-gray-800 text-sm">Minicomputer</h5>
+                                    <p class="text-xs text-gray-600">Mid-range Server<br>Ex: PDP-11, VAX</p>
+                                </div>
+                                <div class="bg-white border-2 border-gray-200 p-3 rounded-lg text-center hover:shadow-lg transition-shadow">
+                                    <div class="text-2xl mb-2">💻</div>
+                                    <h5 class="font-semibold text-gray-800 text-sm">Microcomputer</h5>
+                                    <p class="text-xs text-gray-600">Personal Computer<br>Ex: Desktop, Laptop</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Purpose के आधार पर -->
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-sm mb-2 text-purple-700">🎯 उद्देश्य के आधार पर:</h4>
+                            <div class="space-y-2">
+                                <div class="bg-blue-50 p-3 rounded-lg">
+                                    <h5 class="font-semibold text-blue-800 text-sm">General Purpose Computer</h5>
+                                    <p class="text-xs text-gray-700">विभिन्न कार्यों के लिए - Desktop, Laptop</p>
+                                </div>
+                                <div class="bg-green-50 p-3 rounded-lg">
+                                    <h5 class="font-semibold text-green-800 text-sm">Special Purpose Computer</h5>
+                                    <p class="text-xs text-gray-700">विशिष्ट कार्य के लिए - ATM, Traffic Control</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Data Processing के आधार पर -->
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-sm mb-2 text-purple-700">📊 डेटा प्रोसेसिंग के आधार पर:</h4>
+                            <div class="space-y-2">
+                                <div class="bg-red-50 p-3 rounded-lg">
+                                    <h5 class="font-semibold text-red-800 text-sm">Analog Computer</h5>
+                                    <p class="text-xs text-gray-700">Continuous data - Speedometer, Thermometer</p>
+                                </div>
+                                <div class="bg-yellow-50 p-3 rounded-lg">
+                                    <h5 class="font-semibold text-yellow-800 text-sm">Digital Computer</h5>
+                                    <p class="text-xs text-gray-700">Discrete data (0,1) - PC, Mobile, Calculator</p>
+                                </div>
+                                <div class="bg-purple-50 p-3 rounded-lg">
+                                    <h5 class="font-semibold text-purple-800 text-sm">Hybrid Computer</h5>
+                                    <p class="text-xs text-gray-700">Both Analog + Digital - ECG Machine, CT Scan</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-semibold mb-3 text-indigo-700">कंप्यूटर की पीढ़ियां</h3>
+                        <div class="space-y-2">
+                            <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-gray-500">
+                                <h5 class="font-semibold text-gray-800 text-sm">1st Generation (1940-1956)</h5>
+                                <p class="text-xs text-gray-700">Vacuum Tubes - ENIAC, UNIVAC-1</p>
+                            </div>
+                            <div class="bg-orange-50 p-3 rounded-lg border-l-4 border-orange-500">
+                                <h5 class="font-semibold text-orange-800 text-sm">2nd Generation (1956-1963)</h5>
+                                <p class="text-xs text-gray-700">Transistors - IBM 1401, CDC 1604</p>
+                            </div>
+                            <div class="bg-blue-50 p-3 rounded-lg border-l-4 border-blue-500">
+                                <h5 class="font-semibold text-blue-800 text-sm">3rd Generation (1964-1971)</h5>
+                                <p class="text-xs text-gray-700">Integrated Circuits - IBM 360, PDP-8</p>
+                            </div>
+                            <div class="bg-green-50 p-3 rounded-lg border-l-4 border-green-500">
+                                <h5 class="font-semibold text-green-800 text-sm">4th Generation (1971-Present)</h5>
+                                <p class="text-xs text-gray-700">Microprocessors - Intel 4004, Personal Computers</p>
+                            </div>
+                            <div class="bg-purple-50 p-3 rounded-lg border-l-4 border-purple-500">
+                                <h5 class="font-semibold text-purple-800 text-sm">5th Generation (Present-Future)</h5>
+                                <p class="text-xs text-gray-700">Artificial Intelligence - Quantum Computing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Desktop Preview Enhanced -->
+                <div class="mt-6">
+                    <h3 class="text-lg font-semibold mb-3 text-indigo-700">Windows Desktop Simulation</h3>
+                    <div class="windows-window">
+                        <div class="windows-titlebar">
+                            <span>🖥️ Windows 11 Desktop</span>
+                            <div class="flex space-x-1">
+                                <button class="windows-button">_</button>
+                                <button class="windows-button">□</button>
+                                <button class="windows-button">×</button>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-blue-400 to-purple-600 h-64 md:h-80 p-4 relative" style="background-image: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><pattern id=\"grid\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\"><path d=\"M 10 0 L 0 0 0 10\" fill=\"none\" stroke=\"%23ffffff\" stroke-width=\"0.3\" opacity=\"0.1\"/></pattern></defs><rect width=\"100\" height=\"100\" fill=\"url(%23grid)\"/></svg>');">
+                            <!-- Desktop Icons Grid -->
+                            <div class="grid grid-cols-4 md:grid-cols-8 gap-2 h-full">
+                                <div class="desktop-icon text-white text-center cursor-pointer" onclick="selectIcon(this)" data-tooltip="My Computer - हार्डवेयर जानकारी">
+                                    <div class="text-xl md:text-2xl mb-1">🗂️</div>
+                                    <span class="text-xs">This PC</span>
+                                </div>
+                                <div class="desktop-icon text-white text-center cursor-pointer" onclick="selectIcon(this)" data-tooltip="Documents - फाइलें और फोल्डर">
+                                    <div class="text-xl md:text-2xl mb-1">📁</div>
+                                    <span class="text-xs">Documents</span>
+                                </div>
+                                <div class="desktop-icon text-white text-center cursor-pointer" onclick="selectIcon(this)" data-tooltip="Recycle Bin - डिलीट की गई फाइलें">
+                                    <div class="text-xl md:text-2xl mb-1">🗑️</div>
+                                    <span class="text-xs">Recycle Bin</span>
+                                </div>
+                                <div class="desktop-icon text-white text-center cursor-pointer" onclick="selectIcon(this)" data-tooltip="Microsoft Edge Browser">
+                                    <div class="text-xl md:text-2xl mb-1">🌐</div>
+                                    <span class="text-xs">Edge</span>
+                                </div>
+                                <div class="desktop-icon text-white text-center cursor-pointer" onclick="selectIcon(this)" data-tooltip="MS Word - डॉक्यूमेंट बनाना">
+                                    <div class="text-xl md:text-2xl mb-1">📝</div>
+                                    <span class="text-xs">Word</span>
+                                </div>
+                                <div class="desktop-icon text-white text-center cursor-pointer" onclick="selectIcon(this)" data-tooltip="MS Excel - स्प्रेडशीट">
+                                    <div class="text-xl md:text-2xl mb-1">📊</div>
+                                    <span class="text-xs">Excel</span>
+                                </div>
+                                <div class="desktop-icon text-white text-center cursor-pointer" onclick="selectIcon(this)" data-tooltip="PowerPoint - प्रेजेंटेशन">
+                                    <div class="text-xl md:text-2xl mb-1">🎯</div>
+                                    <span class="text-xs">PowerPoint</span>
+                                </div>
+                                <div class="desktop-icon text-white text-center cursor-pointer" onclick="selectIcon(this)" data-tooltip="Media Player - वीडियो/ऑडियो">
+                                    <div class="text-xl md:text-2xl mb-1">🎵</div>
+                                    <span class="text-xs">Media</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Enhanced Taskbar -->
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 backdrop-blur-sm p-2 flex items-center justify-between">
+                                <div class="flex items-center space-x-2">
+                                    <button class="bg-blue-600 text-white px-3 py-1 rounded text-xs hover:bg-blue-700 transition-colors">🪟 Start</button>
+                                    <div class="bg-gray-700 px-2 py-1 rounded text-white text-xs hover:bg-gray-600 cursor-pointer">📁 Explorer</div>
+                                    <div class="bg-gray-700 px-2 py-1 rounded text-white text-xs hover:bg-gray-600 cursor-pointer">🌐 Edge</div>
+                                    <div class="bg-gray-700 px-2 py-1 rounded text-white text-xs hover:bg-gray-600 cursor-pointer">📧 Mail</div>
+                                </div>
+                                <div class="text-white text-xs">
+                                    <div id="currentTime" class="font-mono">12:30 PM</div>
+                                    <div class="text-xs opacity-75" id="currentDate">15/01/2024</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Computer Applications -->
+                <div class="mt-6 bg-gradient-to-r from-green-50 to-blue-50 p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-3 text-indigo-700">कंप्यूटर के अनुप्रयोग (Applications)</h3>
+                    <div class="mobile-grid">
+                        <div class="bg-white p-3 rounded-lg border-l-4 border-blue-500">
+                            <h4 class="font-semibold text-blue-800 text-sm">🏦 Banking & Finance</h4>
+                            <p class="text-xs text-gray-700">ATM, Online Banking, Stock Trading</p>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg border-l-4 border-green-500">
+                            <h4 class="font-semibold text-green-800 text-sm">🏥 Healthcare</h4>
+                            <p class="text-xs text-gray-700">CT Scan, MRI, Patient Records</p>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg border-l-4 border-purple-500">
+                            <h4 class="font-semibold text-purple-800 text-sm">🎓 Education</h4>
+                            <p class="text-xs text-gray-700">E-learning, Online Exams, Digital Library</p>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg border-l-4 border-red-500">
+                            <h4 class="font-semibold text-red-800 text-sm">🚗 Transportation</h4>
+                            <p class="text-xs text-gray-700">GPS, Traffic Control, Railway Reservation</p>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg border-l-4 border-yellow-500">
+                            <h4 class="font-semibold text-yellow-800 text-sm">🎬 Entertainment</h4>
+                            <p class="text-xs text-gray-700">Gaming, Movies, Music Streaming</p>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg border-l-4 border-indigo-500">
+                            <h4 class="font-semibold text-indigo-800 text-sm">🏭 Industry</h4>
+                            <p class="text-xs text-gray-700">CAD/CAM, Robotics, Quality Control</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Hardware Section -->
+        <section id="hardware" class="section hidden">
+            <div class="mobile-card">
+                <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                    🔧 हार्डवेयर - संपूर्ण विवरण
+                </h2>
+                
+                <div class="mobile-grid">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3 text-indigo-700">मुख्य हार्डवेयर घटक</h3>
+                        
+                        <!-- Enhanced CPU Component -->
+                        <div class="hardware-3d cpu-realistic mb-4 text-white" onclick="showHardwareDetails('cpu')">
+                            <div class="flex items-center justify-between">
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-sm md:text-base">🧠 CPU (Central Processing Unit)</h4>
+                                    <p class="text-xs opacity-90 mb-2">कंप्यूटर का मुख्य प्रोसेसर</p>
+                                    <div class="text-xs space-y-1">
+                                        <div class="flex justify-between">
+                                            <span>Architecture:</span>
+                                            <span>x86-64</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Clock Speed:</span>
+                                            <span id="cpuSpeed">3.2 GHz</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Cores:</span>
+                                            <span>8 (4P + 4E)</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Cache:</span>
+                                            <span>L1:32KB, L2:256KB, L3:8MB</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>TDP:</span>
+                                            <span>65W</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-3xl md:text-4xl ml-4">⚡</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Enhanced RAM Component -->
+                        <div class="hardware-3d ram-realistic mb-4 text-white" onclick="showHardwareDetails('ram')">
+                            <div class="flex items-center justify-between">
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-sm md:text-base">💾 RAM (Random Access Memory)</h4>
+                                    <p class="text-xs opacity-90 mb-2">प्राथमिक मेमोरी (अस्थायी)</p>
+                                    <div class="text-xs space-y-1">
+                                        <div class="flex justify-between">
+                                            <span>Type:</span>
+                                            <span>DDR4-3200</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Capacity:</span>
+                                            <span>16GB (2x8GB)</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Speed:</span>
+                                            <span>3200 MHz</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Latency:</span>
+                                            <span>CL16</span>
+                                        </div>
+                                        <div class="progress-advanced mt-2">
+                                            <div class="progress-fill-advanced" style="width: 65%" id="ramUsageBar"></div>
+                                        </div>
+                                        <div class="text-xs mt-1">Usage: <span id="ramUsageText">65%</span> (10.4GB/16GB)</div>
+                                    </div>
+                                </div>
+                                <div class="text-3xl md:text-4xl ml-4">⚡</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Enhanced Storage Component -->
+                        <div class="hardware-3d bg-gradient-to-r from-purple-600 to-purple-700 text-white mb-4" onclick="showHardwareDetails('storage')">
+                            <div class="flex items-center justify-between">
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-sm md:text-base">💿 Storage Devices</h4>
+                                    <p class="text-xs opacity-90 mb-2">द्वितीयक मेमोरी (स्थायी)</p>
+                                    <div class="text-xs space-y-1">
+                                        <div class="bg-purple-800 p-2 rounded mb-2">
+                                            <div class="flex justify-between">
+                                                <span>SSD (Primary):</span>
+                                                <span>512GB NVMe</span>
+                                            </div>
+                                            <div class="progress-advanced mt-1">
+                                                <div class="progress-fill-advanced bg-purple-400" style="width: 45%"></div>
+                                            </div>
+                                            <div class="text-xs mt-1">Used: 230GB (45%)</div>
+                                        </div>
+                                        <div class="bg-purple-800 p-2 rounded">
+                                            <div class="flex justify-between">
+                                                <span>HDD (Secondary):</span>
+                                                <span>2TB SATA</span>
+                                            </div>
+                                            <div class="progress-advanced mt-1">
+                                                <div class="progress-fill-advanced bg-purple-400" style="width: 25%"></div>
+                                            </div>
+                                            <div class="text-xs mt-1">Used: 500GB (25%)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-3xl md:text-4xl ml-4">💽</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Enhanced Motherboard Component -->
+                        <div class="hardware-3d motherboard-realistic text-white mb-4" onclick="showHardwareDetails('motherboard')">
+                            <div class="flex items-center justify-between">
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-sm md:text-base">🔌 Motherboard</h4>
+                                    <p class="text-xs opacity-90 mb-2">मुख्य सर्किट बोर्ड</p>
+                                    <div class="text-xs space-y-1">
+                                        <div class="flex justify-between">
+                                            <span>Form Factor:</span>
+                                            <span>ATX</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Chipset:</span>
+                                            <span>Intel Z690</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>RAM Slots:</span>
+                                            <span>4 x DDR4</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>PCIe Slots:</span>
+                                            <span>3 x PCIe 4.0</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>USB Ports:</span>
+                                            <span>8 x USB 3.0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-3xl md:text-4xl ml-4">🔌</div>
+                            </div>
+                        </div>
+                        
+                        <!-- GPU Component -->
+                        <div class="hardware-3d bg-gradient-to-r from-orange-600 to-red-600 text-white mb-4" onclick="showHardwareDetails('gpu')">
+                            <div class="flex items-center justify-between">
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-sm md:text-base">🎮 GPU (Graphics Processing Unit)</h4>
+                                    <p class="text-xs opacity-90 mb-2">ग्राफिक्स प्रोसेसिंग यूनिट</p>
+                                    <div class="text-xs space-y-1">
+                                        <div class="flex justify-between">
+                                            <span>Model:</span>
+                                            <span>RTX 4060 Ti</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>VRAM:</span>
+                                            <span>8GB GDDR6</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>CUDA Cores:</span>
+                                            <span>4352</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Base Clock:</span>
+                                            <span>2310 MHz</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Temperature:</span>
+                                            <span id="gpuTemp">65°C</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-3xl md:text-4xl ml-4">🎨</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3 text-indigo-700">System Monitor (Real-time)</h3>
+                        <div class="system-monitor-advanced mb-4">
+                            <div class="text-center mb-3">
+                                <div class="text-lg font-bold">🖥️ SYSTEM STATUS MONITOR</div>
+                                <div class="text-xs opacity-75">Real-time Hardware Monitoring</div>
+                            </div>
+                            <div class="text-xs space-y-2">
+                                <div class="flex justify-between">
+                                    <span>CPU Usage:</span>
+                                    <span id="cpuUsageMonitor">45%</span>
+                                </div>
+                                <div class="progress-advanced">
+                                    <div class="progress-fill-advanced" style="width: 45%" id="cpuProgressBar"></div>
+                                </div>
+                                
+                                <div class="flex justify-between">
+                                    <span>RAM Usage:</span>
+                                    <span id="ramUsageMonitor">65%</span>
+                                </div>
+                                <div class="progress-advanced">
+                                    <div class="progress-fill-advanced" style="width: 65%" id="ramProgressBar"></div>
+                                </div>
+                                
+                                <div class="flex justify-between">
+                                    <span>GPU Usage:</span>
+                                    <span id="gpuUsageMonitor">30%</span>
+                                </div>
+                                <div class="progress-advanced">
+                                    <div class="progress-fill-advanced" style="width: 30%" id="gpuProgressBar"></div>
+                                </div>
+                                
+                                <div class="flex justify-between">
+                                    <span>Disk Usage:</span>
+                                    <span id="diskUsageMonitor">45%</span>
+                                </div>
+                                <div class="progress-advanced">
+                                    <div class="progress-fill-advanced" style="width: 45%" id="diskProgressBar"></div>
+                                </div>
+                                
+                                <div class="border-t border-green-500 pt-2 mt-3">
+                                    <div class="flex justify-between">
+                                        <span>CPU Temp:</span>
+                                        <span id="cpuTempMonitor">65°C</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span>GPU Temp:</span>
+                                        <span id="gpuTempMonitor">70°C</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span>System Uptime:</span>
+                                        <span id="uptimeMonitor">2h 30m</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span>Network:</span>
+                                        <span id="networkMonitor">↓ 50 Mbps ↑ 10 Mbps</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-semibold mb-3 text-indigo-700">Input/Output Devices</h3>
+                        <div class="mobile-grid">
+                            <div class="hardware-3d bg-white border-2 border-gray-300 text-center" onclick="testDevice('keyboard')">
+                                <div class="text-2xl md:text-3xl mb-2">⌨️</div>
+                                <h4 class="font-semibold text-sm">Keyboard</h4>
+                                <p class="text-xs text-gray-600 mb-2">Input Device</p>
+                                <div class="text-xs space-y-1">
+                                    <div>Type: Mechanical</div>
+                                    <div>Layout: QWERTY</div>
+                                    <div>Keys: 104</div>
+                                </div>
+                                <button class="mt-2 bg-blue-500 text-white px-3 py-1 rounded text-xs hover:bg-blue-600">Test</button>
+                            </div>
+                            
+                            <div class="hardware-3d bg-white border-2 border-gray-300 text-center" onclick="testDevice('mouse')">
+                                <div class="text-2xl md:text-3xl mb-2">🖱️</div>
+                                <h4 class="font-semibold text-sm">Mouse</h4>
+                                <p class="text-xs text-gray-600 mb-2">Pointing Device</p>
+                                <div class="text-xs space-y-1">
+                                    <div>Type: Optical</div>
+                                    <div>DPI: 1600</div>
+                                    <div>Buttons: 3</div>
+                                </div>
+                                <button class="mt-2 bg-blue-500 text-white px-3 py-1 rounded text-xs hover:bg-blue-600">Test</button>
+                            </div>
+                            
+                            <div class="hardware-3d bg-white border-2 border-gray-300 text-center" onclick="testDevice('monitor')">
+                                <div class="text-2xl md:text-3xl mb-2">🖥️</div>
+                                <h4 class="font-semibold text-sm">Monitor</h4>
+                                <p class="text-xs text-gray-600 mb-2">Display Device</p>
+                                <div class="text-xs space-y-1">
+                                    <div>Size: 24" LED</div>
+                                    <div>Resolution: 1920x1080</div>
+                                    <div>Refresh: 144Hz</div>
+                                </div>
+                                <button class="mt-2 bg-blue-500 text-white px-3 py-1 rounded text-xs hover:bg-blue-600">Test</button>
+                            </div>
+                            
+                            <div class="hardware-3d bg-white border-2 border-gray-300 text-center" onclick="testDevice('speaker')">
+                                <div class="text-2xl md:text-3xl mb-2">🔊</div>
+                                <h4 class="font-semibold text-sm">Speakers</h4>
+                                <p class="text-xs text-gray-600 mb-2">Audio Output</p>
+                                <div class="text-xs space-y-1">
+                                    <div>Type: 2.1 Channel</div>
+                                    <div>Power: 50W RMS</div>
+                                    <div>Frequency: 20Hz-20kHz</div>
+                                </div>
+                                <button class="mt-2 bg-blue-500 text-white px-3 py-1 rounded text-xs hover:bg-blue-600">Test</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Computer Case Visualization Enhanced -->
+                        <div class="mt-6">
+                            <h3 class="text-lg font-semibold mb-3 text-indigo-700">Computer Case (3D View)</h3>
+                            <div class="windows-window">
+                                <div class="windows-titlebar">
+                                    <span>🖥️ Computer Hardware Layout</span>
+                                    <div class="flex space-x-1">
+                                        <button class="windows-button">_</button>
+                                        <button class="windows-button">□</button>
+                                        <button class="windows-button">×</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="p-4 bg-gray-100">
+                                    <div class="bg-gray-800 rounded-lg p-4 relative" style="height: 300px;">
+                                        <!-- Enhanced Motherboard -->
+                                        <div class="absolute inset-4 bg-green-600 rounded opacity-90 border-2 border-green-700">
+                                            <!-- CPU Socket with detailed design -->
+                                            <div class="absolute top-4 left-4 w-16 h-16 bg-gray-900 rounded border-2 border-yellow-400">
+                                                <div class="w-full h-full bg-gradient-to-br from-gray-700 to-gray-900 rounded flex items-center justify-center text-white text-xs font-bold">
+                                                    <div class="text-center">
+                                                        <div>Intel</div>
+                                                        <div>i7</div>
+                                                    </div>
+                                                </div>
+                                                <!-- CPU Cooler -->
+                                                <div class="absolute -top-2 -left-2 w-20 h-20 bg-gray-600 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                                    <div class="w-12 h-12 bg-gray-400 rounded-full animate-spin border-4 border-gray-300"></div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Enhanced RAM Slots -->
+                                            <div class="absolute top-4 right-4 space-y-1">
+                                                <div class="w-20 h-4 bg-blue-500 rounded border border-blue-600 flex items-center justify-center text-white text-xs">DDR4</div>
+                                                <div class="w-20 h-4 bg-blue-500 rounded border border-blue-600 flex items-center justify-center text-white text-xs">DDR4</div>
+                                                <div class="w-20 h-4 bg-gray-400 rounded opacity-50 border border-gray-500"></div>
+                                                <div class="w-20 h-4 bg-gray-400 rounded opacity-50 border border-gray-500"></div>
+                                            </div>
+                                            
+                                            <!-- Enhanced GPU Slot -->
+                                            <div class="absolute bottom-12 left-4 right-4 h-10 bg-gradient-to-r from-orange-500 to-red-500 rounded flex items-center justify-center text-white text-sm font-bold border-2 border-red-600">
+                                                <div class="text-center">
+                                                    <div>NVIDIA RTX 4060 Ti</div>
+                                                    <div class="text-xs">8GB GDDR6</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Storage Devices */
+                                            <div class="absolute bottom-4 right-4 space-x-2 flex">
+                                                <div class="w-16 h-6 bg-purple-500 rounded flex items-center justify-center text-white text-xs font-bold border border-purple-600">
+                                                    SSD
+                                                </div>
+                                                <div class="w-16 h-6 bg-blue-500 rounded flex items-center justify-center text-white text-xs font-bold border border-blue-600">
+                                                    HDD
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Expansion Slots */
+                                            <div class="absolute left-4 top-24 space-y-1">
+                                                <div class="w-12 h-2 bg-yellow-500 rounded"></div>
+                                                <div class="w-12 h-2 bg-yellow-500 rounded"></div>
+                                                <div class="w-12 h-2 bg-gray-400 rounded opacity-50"></div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Enhanced Power Supply */
+                                        <div class="absolute bottom-2 left-2 w-20 h-10 bg-gradient-to-r from-yellow-500 to-orange-500 rounded flex items-center justify-center text-black text-xs font-bold border-2 border-yellow-600">
+                                            <div class="text-center">
+                                                <div>PSU</div>
+                                                <div>650W</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Case Fans */
+                                        <div class="absolute top-2 right-2 w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center border-2 border-gray-400">
+                                            <div class="w-8 h-8 border-2 border-gray-600 rounded-full animate-spin"></div>
+                                        </div>
+                                        <div class="absolute bottom-2 right-2 w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center border-2 border-gray-400">
+                                            <div class="w-8 h-8 border-2 border-gray-600 rounded-full animate-spin"></div>
+                                        </div>
+                                        
+                                        <!-- I/O Ports */
+                                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-4 bg-gray-700 rounded-b flex items-center justify-center">
+                                            <div class="flex space-x-1">
+                                                <div class="w-2 h-2 bg-blue-400 rounded"></div>
+                                                <div class="w-2 h-2 bg-green-400 rounded"></div>
+                                                <div class="w-2 h-2 bg-red-400 rounded"></div>
+                                                <div class="w-2 h-2 bg-yellow-400 rounded"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hardware Comparison Table -->
+                <div class="mt-6 bg-white p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-3 text-indigo-700">Storage Devices Comparison</h3>
+                    <div class="overflow-x-auto">
+                        <table class="table-compact">
+                            <thead>
+                                <tr>
+                                    <th>Device</th>
+                                    <th>Type</th>
+                                    <th>Speed</th>
+                                    <th>Capacity</th>
+                                    <th>Price/GB</th>
+                                    <th>Durability</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>HDD</td>
+                                    <td>Magnetic</td>
+                                    <td>150 MB/s</td>
+                                    <td>Up to 20TB</td>
+                                    <td>₹2-3</td>
+                                    <td>3-5 years</td>
+                                </tr>
+                                <tr>
+                                    <td>SSD (SATA)</td>
+                                    <td>Flash</td>
+                                    <td>550 MB/s</td>
+                                    <td>Up to 8TB</td>
+                                    <td>₹8-12</td>
+                                    <td>5-10 years</td>
+                                </tr>
+                                <tr>
+                                    <td>NVMe SSD</td>
+                                    <td>Flash</td>
+                                    <td>3500 MB/s</td>
+                                    <td>Up to 8TB</td>
+                                    <td>₹12-20</td>
+                                    <td>5-10 years</td>
+                                </tr>
+                                <tr>
+                                    <td>USB Drive</td>
+                                    <td>Flash</td>
+                                    <td>100 MB/s</td>
+                                    <td>Up to 2TB</td>
+                                    <td>₹15-25</td>
+                                    <td>2-5 years</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Hardware Tips -->
+                <div class="mt-4 bg-gradient-to-r from-yellow-50 to-orange-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-yellow-800 mb-3">💡 Hardware Maintenance Tips:</h4>
+                    <div class="mobile-grid">
+                        <ul class="text-sm space-y-2 text-gray-700">
+                            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> कंप्यूटर को धूल से बचाएं</li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> Temperature monitor करें</li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> Regular cleaning करें</li>
+                        </ul>
+                        <ul class="text-sm space-y-2 text-gray-700">
+                            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> UPS का उपयोग करें</li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> Proper ventilation रखें</li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> Cable management करें</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Software Section -->
+        <section id="software" class="section hidden">
+            <div class="mobile-card">
+                <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4">💿 सॉफ्टवेयर - संपूर्ण विवरण</h2>
+                
+                <div class="mobile-grid">
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-600 text-white p-4 rounded-xl">
+                        <h3 class="text-lg font-bold mb-3">🖥️ सिस्टम सॉफ्टवेयर</h3>
+                        <div class="space-y-2 text-sm">
+                            <div class="bg-blue-700 p-2 rounded">
+                                <h4 class="font-semibold">Operating System</h4>
+                                <p class="text-xs opacity-90">Windows, macOS, Linux, Android, iOS</p>
+                            </div>
+                            <div class="bg-blue-700 p-2 rounded">
+                                <h4 class="font-semibold">Device Drivers</h4>
+                                <p class="text-xs opacity-90">Graphics, Audio, Network, Printer</p>
+                            </div>
+                            <div class="bg-blue-700 p-2 rounded">
+                                <h4 class="font-semibold">Firmware</h4>
+                                <p class="text-xs opacity-90">BIOS, UEFI, Router Firmware</p>
+                            </div>
+                            <div class="bg-blue-700 p-2 rounded">
+                                <h4 class="font-semibold">Utilities</h4>
+                                <p class="text-xs opacity-90">Antivirus, Disk Cleanup, Registry</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-green-500 to-green-600 text-white p-4 rounded-xl">
+                        <h3 class="text-lg font-bold mb-3">📱 एप्लिकेशन सॉफ्टवेयर</h3>
+                        <div class="space-y-2 text-sm">
+                            <div class="bg-green-700 p-2 rounded">
+                                <h4 class="font-semibold">Office Suite</h4>
+                                <p class="text-xs opacity-90">MS Office, LibreOffice, Google Workspace</p>
+                            </div>
+                            <div class="bg-green-700 p-2 rounded">
+                                <h4 class="font-semibold">Web Browsers</h4>
+                                <p class="text-xs opacity-90">Chrome, Firefox, Edge, Safari</p>
+                            </div>
+                            <div class="bg-green-700 p-2 rounded">
+                                <h4 class="font-semibold">Media Players</h4>
+                                <p class="text-xs opacity-90">VLC, Windows Media Player, iTunes</p>
+                            </div>
+                            <div class="bg-green-700 p-2 rounded">
+                                <h4 class="font-semibold">Graphics Software</h4>
+                                <p class="text-xs opacity-90">Photoshop, GIMP, CorelDRAW</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-purple-500 to-purple-600 text-white p-4 rounded-xl">
+                        <h3 class="text-lg font-bold mb-3">🛠️ प्रोग्रामिंग सॉफ्टवेयर</h3>
+                        <div class="space-y-2 text-sm">
+                            <div class="bg-purple-700 p-2 rounded">
+                                <h4 class="font-semibold">Text Editors</h4>
+                                <p class="text-xs opacity-90">Notepad++, Sublime Text, VS Code</p>
+                            </div>
+                            <div class="bg-purple-700 p-2 rounded">
+                                <h4 class="font-semibold">Compilers</h4>
+                                <p class="text-xs opacity-90">GCC, Visual Studio, Java JDK</p>
+                            </div>
+                            <div class="bg-purple-700 p-2 rounded">
+                                <h4 class="font-semibold">Debuggers</h4>
+                                <p class="text-xs opacity-90">GDB, Visual Studio Debugger</p>
+                            </div>
+                            <div class="bg-purple-700 p-2 rounded">
+                                <h4 class="font-semibold">IDEs</h4>
+                                <p class="text-xs opacity-90">Eclipse, IntelliJ, Xcode</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Software Licensing -->
+                <div class="mt-6 bg-gray-50 p-4 rounded-xl">
+                    <h3 class="text-lg font-semibold mb-4 text-gray-800">📜 Software Licensing Types</h3>
+                    <div class="mobile-grid">
+                        <div class="bg-white p-4 rounded-lg border-l-4 border-blue-500">
+                            <h4 class="font-semibold text-blue-700 mb-2">💰 Commercial Software</h4>
+                            <p class="text-sm text-gray-600 mb-2">पैसे देकर खरीदना पड़ता है</p>
+                            <ul class="text-xs space-y-1">
+                                <li>• Microsoft Office - ₹6,199/year</li>
+                                <li>• Adobe Creative Suite - ₹1,675/month</li>
+                                <li>• Windows 11 Pro - ₹19,500</li>
+                                <li>• AutoCAD - ₹1,60,000/year</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg border-l-4 border-green-500">
+                            <h4 class="font-semibold text-green-700 mb-2">🆓 Free Software</h4>
+                            <p class="text-sm text-gray-600 mb-2">मुफ्त में उपलब्ध</p>
+                            <ul class="text-xs space-y-1">
+                                <li>• LibreOffice - Complete Office Suite</li>
+                                <li>• GIMP - Image Editor</li>
+                                <li>• VLC Media Player</li>
+                                <li>• Mozilla Firefox Browser</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg border-l-4 border-yellow-500">
+                            <h4 class="font-semibold text-yellow-700 mb-2">🔓 Open Source</h4>
+                            <p class="text-sm text-gray-600 mb-2">Source code भी उपलब्ध</p>
+                            <ul class="text-xs space-y-1">
+                                <li>• Linux Operating System</li>
+                                <li>• Apache Web Server</li>
+                                <li>• MySQL Database</li>
+                                <li>• WordPress CMS</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg border-l-4 border-purple-500">
+                            <h4 class="font-semibold text-purple-700 mb-2">⏰ Shareware/Trial</h4>
+                            <p class="text-sm text-gray-600 mb-2">सीमित समय के लिए मुफ्त</p>
+                            <ul class="text-xs space-y-1">
+                                <li>• WinRAR - 40 days trial</li>
+                                <li>• Adobe Photoshop - 7 days</li>
+                                <li>• Microsoft Office - 30 days</li>
+                                <li>• Antivirus Software - 30 days</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Software Installation Process -->
+                <div class="mt-6 bg-white p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-4 text-indigo-700">📥 Software Installation Process</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4 p-3 bg-blue-50 rounded-lg">
+                            <div class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-sm">1</div>
+                            <div>
+                                <h4 class="font-semibold text-blue-800">Download/Purchase</h4>
+                                <p class="text-sm text-gray-600">Software को official website से download करें</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4 p-3 bg-green-50 rounded-lg">
+                            <div class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-sm">2</div>
+                            <div>
+                                <h4 class="font-semibold text-green-800">Run Installer</h4>
+                                <p class="text-sm text-gray-600">.exe या .msi file को double-click करें</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4 p-3 bg-yellow-50 rounded-lg">
+                            <div class="w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center font-bold text-sm">3</div>
+                            <div>
+                                <h4 class="font-semibold text-yellow-800">Accept License</h4>
+                                <p class="text-sm text-gray-600">Terms & Conditions को पढ़कर accept करें</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4 p-3 bg-purple-50 rounded-lg">
+                            <div class="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center font-bold text-sm">4</div>
+                            <div>
+                                <h4 class="font-semibold text-purple-800">Choose Location</h4>
+                                <p class="text-sm text-gray-600">Installation path select करें (usually C:\Program Files)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4 p-3 bg-red-50 rounded-lg">
+                            <div class="w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center font-bold text-sm">5</div>
+                            <div>
+                                <h4 class="font-semibold text-red-800">Complete Installation</h4>
+                                <p class="text-sm text-gray-600">Install button दबाएं और process complete होने का wait करें</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Software Categories by Function -->
+                <div class="mt-6 bg-gradient-to-r from-indigo-50 to-purple-50 p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-4 text-indigo-700">🎯 Function के आधार पर Software Categories</h3>
+                    <div class="mobile-grid">
+                        <div class="bg-white p-3 rounded-lg border-l-4 border-red-500">
+                            <h4 class="font-semibold text-red-800 text-sm">🎮 Entertainment</h4>
+                            <p class="text-xs text-gray-700">Games, Media Players, Streaming Apps</p>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg border-l-4 border-blue-500">
+                            <h4 class="font-semibold text-blue-800 text-sm">💼 Business</h4>
+                            <p class="text-xs text-gray-700">Accounting, CRM, ERP, Project Management</p>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg border-l-4 border-green-500">
+                            <h4 class="font-semibold text-green-800 text-sm">🎓 Educational</h4>
+                            <p class="text-xs text-gray-700">Learning Apps, Language Software, Tutorials</p>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg border-l-4 border-purple-500">
+                            <h4 class="font-semibold text-purple-800 text-sm">🔧 Utility</h4>
+                            <p class="text-xs text-gray-700">System Cleaners, File Managers, Backup Tools</p>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg border-l-4 border-yellow-500">
+                            <h4 class="font-semibold text-yellow-800 text-sm">🎨 Creative</h4>
+                            <p class="text-xs text-gray-700">Photo/Video Editors, CAD, 3D Modeling</p>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg border-l-4 border-indigo-500">
+                            <h4 class="font-semibold text-indigo-800 text-sm">🌐 Communication</h4>
+                            <p class="text-xs text-gray-700">Email Clients, Video Calling, Social Media</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Operating System Section -->
+        <section id="os" class="section hidden">
+            <div class="mobile-card">
+                <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4">🖥️ Operating System - संपूर्ण गाइड</h2>
+                
+                <div class="mobile-grid">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3 text-indigo-700">OS की परिभाषा और कार्य</h3>
+                        <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                            <p class="text-responsive text-gray-700">
+                                <strong>Operating System</strong> एक system software है जो computer hardware और user के बीच interface का काम करता है। 
+                                यह hardware resources को manage करता है और applications को run करने का platform प्रदान करता है।
+                            </p>
+                        </div>
+                        
+                        <h3 class="text-lg font-semibold mb-3 text-indigo-700">OS के मुख्य कार्य</h3>
+                        <div class="space-y-3">
+                            <div class="bg-green-50 p-3 rounded-lg border-l-4 border-green-500">
+                                <h4 class="font-semibold text-green-800 text-sm">🔧 Process Management</h4>
+                                <p class="text-xs text-gray-700">Programs को execute करना, CPU scheduling, multitasking</p>
+                            </div>
+                            <div class="bg-blue-50 p-3 rounded-lg border-l-4 border-blue-500">
+                                <h4 class="font-semibold text-blue-800 text-sm">💾 Memory Management</h4>
+                                <p class="text-xs text-gray-700">RAM allocation, virtual memory, paging, swapping</p>
+                            </div>
+                            <div class="bg-purple-50 p-3 rounded-lg border-l-4 border-purple-500">
+                                <h4 class="font-semibold text-purple-800 text-sm">📁 File System Management</h4>
+                                <p class="text-xs text-gray-700">Files और directories को organize करना</p>
+                            </div>
+                            <div class="bg-orange-50 p-3 rounded-lg border-l-4 border-orange-500">
+                                <h4 class="font-semibold text-orange-800 text-sm">🔌 Device Management</h4>
+                                <p class="text-xs text-gray-700">Hardware devices को control करना</p>
+                            </div>
+                            <div class="bg-red-50 p-3 rounded-lg border-l-4 border-red-500">
+                                <h4 class="font-semibold text-red-800 text-sm">🔒 Security Management</h4>
+                                <p class="text-xs text-gray-700">User authentication, access control, data protection</p>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-semibold mb-3 mt-6 text-indigo-700">OS के प्रकार</h3>
+                        <div class="space-y-3">
+                            <div class="bg-white p-3 rounded-lg border border-gray-200">
+                                <h4 class="font-semibold text-gray-800 text-sm mb-2">👤 Single User vs Multi User</h4>
+                                <div class="text-xs space-y-1">
+                                    <div><strong>Single User:</strong> DOS, Windows 95/98/ME</div>
+                                    <div><strong>Multi User:</strong> Linux, Windows Server, UNIX</div>
+                                </div>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg border border-gray-200">
+                                <h4 class="font-semibold text-gray-800 text-sm mb-2">⚡ Single Tasking vs Multi Tasking</h4>
+                                <div class="text-xs space-y-1">
+                                    <div><strong>Single Tasking:</strong> MS-DOS</div>
+                                    <div><strong>Multi Tasking:</strong> Windows, macOS, Linux</div>
+                                </div>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg border border-gray-200">
+                                <h4 class="font-semibold text-gray-800 text-sm mb-2">🖥️ GUI vs CLI</h4>
+                                <div class="text-xs space-y-1">
+                                    <div><strong>GUI:</strong> Windows, macOS (Graphical Interface)</div>
+                                    <div><strong>CLI:</strong> DOS, Linux Terminal (Command Line)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3 text-indigo-700">Popular Operating Systems</h3>
+                        <div class="space-y-4">
+                            <div class="bg-blue-50 p-4 rounded-lg flex items-center">
+                                <div class="text-3xl mr-4">🪟</div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-blue-800">Microsoft Windows</h4>
+                                    <p class="text-sm text-gray-700 mb-2">सबसे लोकप्रिय desktop OS</p>
+                                    <div class="text-xs space-y-1">
+                                        <div><strong>Market Share:</strong> 76% (Desktop)</div>
+                                        <div><strong>Latest Version:</strong> Windows 11</div>
+                                        <div><strong>File System:</strong> NTFS, FAT32</div>
+                                        <div><strong>Price:</strong> ₹19,500 (Pro)</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg flex items-center">
+                                <div class="text-3xl mr-4">🍎</div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-gray-800">macOS</h4>
+                                    <p class="text-sm text-gray-700 mb-2">Apple computers के लिए</p>
+                                    <div class="text-xs space-y-1">
+                                        <div><strong>Market Share:</strong> 15% (Desktop)</div>
+                                        <div><strong>Latest Version:</strong> macOS Sonoma</div>
+                                        <div><strong>File System:</strong> APFS, HFS+</div>
+                                        <div><strong>Price:</strong> Free (with Mac)</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-orange-50 p-4 rounded-lg flex items-center">
+                                <div class="text-3xl mr-4">🐧</div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-orange-800">Linux</h4>
+                                    <p class="text-sm text-gray-700 mb-2">Open source OS</p>
+                                    <div class="text-xs space-y-1">
+                                        <div><strong>Market Share:</strong> 3% (Desktop), 96% (Servers)</div>
+                                        <div><strong>Popular Distros:</strong> Ubuntu, CentOS, Debian</div>
+                                        <div><strong>File System:</strong> ext4, Btrfs, XFS</div>
+                                        <div><strong>Price:</strong> Free</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-green-50 p-4 rounded-lg flex items-center">
+                                <div class="text-3xl mr-4">🤖</div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-green-800">Android</h4>
+                                    <p class="text-sm text-gray-700 mb-2">Mobile OS (Linux based)</p>
+                                    <div class="text-xs space-y-1">
+                                        <div><strong>Market Share:</strong> 71% (Mobile)</div>
+                                        <div><strong>Latest Version:</strong> Android 14</div>
+                                        <div><strong>Developer:</strong> Google</div>
+                                        <div><strong>Price:</strong> Free</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-semibold mb-3 mt-6 text-indigo-700">Windows Versions History</h3>
+                        <div class="space-y-2">
+                            <div class="bg-gray-100 p-2 rounded text-xs">
+                                <strong>Windows 1.0 (1985)</strong> - First GUI version
+                            </div>
+                            <div class="bg-gray-100 p-2 rounded text-xs">
+                                <strong>Windows 95 (1995)</strong> - Start button introduced
+                            </div>
+                            <div class="bg-gray-100 p-2 rounded text-xs">
+                                <strong>Windows XP (2001)</strong> - Most popular version
+                            </div>
+                            <div class="bg-gray-100 p-2 rounded text-xs">
+                                <strong>Windows 7 (2009)</strong> - Improved performance
+                            </div>
+                            <div class="bg-gray-100 p-2 rounded text-xs">
+                                <strong>Windows 10 (2015)</strong> - Last version number
+                            </div>
+                            <div class="bg-blue-100 p-2 rounded text-xs">
+                                <strong>Windows 11 (2021)</strong> - Current version
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Windows Shortcuts Enhanced -->
+                <div class="mt-6 bg-white p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-4 text-indigo-700">⌨️ Windows Keyboard Shortcuts (Complete List)</h3>
+                    <div class="mobile-grid">
+                        <div>
+                            <h4 class="font-semibold text-sm mb-2 text-purple-700">🔤 Basic Shortcuts</h4>
+                            <div class="space-y-2 text-xs">
+                                <div class="flex justify-between items-center py-1 border-b border-gray-200">
+                                    <span>Copy</span>
+                                    <span class="shortcut-key">Ctrl + C</span>
+                                </div>
+                                <div class="flex justify-between items-center py-1 border-b border-gray-200">
+                                    <span>Paste</span>
+                                    <span class="shortcut-key">Ctrl + V</span>
+                                </div>
+                                <div class="flex justify-between items-center py-1 border-b border-gray-200">
+                                    <span>Cut</span>
+                                    <span class="shortcut-key">Ctrl + X</span>
+                                </div>
+                                <div class="flex justify-between items-center py-1 border-b border-gray-200">
+                                    <span>Undo</span>
+                                    <span class="shortcut-key">Ctrl + Z</span>
+                                </div>
+                                <div class="flex justify-between items-center py-1 border-b border-gray-200">
+                                    <span>Redo</span>
+                                    <span class="shortcut-key">Ctrl + Y</span>
+                                </div>
+                                <div class="flex justify-between items-center py-1 border-b border-gray-200">
+                                    <span>Select All</span>
+                                    <span class="shortcut-key">Ctrl + A</span>
+                                </div>
+                                <div class="flex justify-between items-center py-1">
+                                    <span>Find</span>
+                                    <span class="shortcut-key">Ctrl + F</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-sm mb-2 text-purple-700">🪟 Windows Key Shortcuts</h4>
+                            <div class="space-y-2 text-xs">
+                                <div class="flex justify-between items-center py-1 border-b border-gray-200">
+                                    <span>Start Menu</span>
+                                    <span class="shortcut-key">Win</span>
+                                </div>
+                                <div class="flex justify-between items-center py-1 border-b border-gray-200">
+                                    <span>File Explorer</span>
+                                    <span class="shortcut-key">Win + E</span>
+                                </div>
+                                <div class="flex justify-between items-center py-1 border-b border-gray-200">
+                                    <span>Settings</span>
+                                    <span class="shortcut-key">Win + I</span>
+                                </div>
+                                <div class="flex justify-between items-center py-1 border-b border-gray-200">
+                                    <span>Lock Screen</span>
+                                    <span class="shortcut-key">Win + L</span>
+                                </div>
+                                <div class="flex justify-between items-center py-1 border-b border-gray-200">
+                                    <span>Run Dialog</span>
+                                    <span class="shortcut-key">Win + R</span>
+                                </div>
+                                <div class="flex justify-between items-center py-1 border-b border-gray-200">
+                                    <span>Task View</span>
+                                    <span class="shortcut-key">Win + Tab</span>
+                                </div>
+                                <div class="flex justify-between items-center py-1">
+                                    <span>Screenshot</span>
+                                    <span class="shortcut-key">Win + Shift + S</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-sm mb-2 text-purple-700">🔧 System Shortcuts</h4>
+                            <div class="space-y-2 text-xs">
+                                <div class="flex justify-between items-center py-1 border-b border-gray-200">
+                                    <span>Task Manager</span>
+                                    <span class="shortcut-key">Ctrl + Shift + Esc</span>
+                                </div>
+                                <div class="flex justify-between items-center py-1 border-b border-gray-200">
+                                    <span>System Info</span>
+                                    <span class="shortcut-key">Win + Pause</span>
+                                </div>
+                                <div class="flex justify-between items-center py-1 border-b border-gray-200">
+                                    <span>Device Manager</span>
+                                    <span class="shortcut-key">Win + X, M</span>
+                                </div>
+                                <div class="flex justify-between items-center py-1 border-b border-gray-200">
+                                    <span>Control Panel</span>
+                                    <span class="shortcut-key">Win + X, P</span>
+                                </div>
+                                <div class="flex justify-between items-center py-1 border-b border-gray-200">
+                                    <span>Command Prompt</span>
+                                    <span class="shortcut-key">Win + X, C</span>
+                                </div>
+                                <div class="flex justify-between items-center py-1 border-b border-gray-200">
+                                    <span>PowerShell</span>
+                                    <span class="shortcut-key">Win + X, I</span>
+                                </div>
+                                <div class="flex justify-between items-center py-1">
+                                    <span>Restart Explorer</span>
+                                    <span class="shortcut-key">Ctrl + Shift + Esc</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button onclick="practiceShortcuts()" class="mt-4 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition-colors w-full md:w-auto">
+                        🎯 Shortcuts Practice करें
+                    </button>
+                </div>
+                
+                <!-- File System -->
+                <div class="mt-6 bg-gradient-to-r from-green-50 to-blue-50 p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-4 text-indigo-700">📁 File System Types</h3>
+                    <div class="mobile-grid">
+                        <div class="bg-white p-3 rounded-lg border-l-4 border-blue-500">
+                            <h4 class="font-semibold text-blue-800 text-sm">NTFS</h4>
+                            <p class="text-xs text-gray-700 mb-1">Windows का modern file system</p>
+                            <ul class="text-xs space-y-1">
+                                <li>• Max file size: 16TB</li>
+                                <li>• Security features</li>
+                                <li>• Compression support</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg border-l-4 border-green-500">
+                            <h4 class="font-semibold text-green-800 text-sm">FAT32</h4>
+                            <p class="text-xs text-gray-700 mb-1">Universal compatibility</p>
+                            <ul class="text-xs space-y-1">
+                                <li>• Max file size: 4GB</li>
+                                <li>• Cross-platform</li>
+                                <li>• USB drives के लिए</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg border-l-4 border-purple-500">
+                            <h4 class="font-semibold text-purple-800 text-sm">ext4</h4>
+                            <p class="text-xs text-gray-700 mb-1">Linux का default file system</p>
+                            <ul class="text-xs space-y-1">
+                                <li>• Max file size: 16TB</li>
+                                <li>• Journaling support</li>
+                                <li>• Better performance</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg border-l-4 border-orange-500">
+                            <h4 class="font-semibold text-orange-800 text-sm">APFS</h4>
+                            <p class="text-xs text-gray-700 mb-1">Apple का modern file system</p>
+                            <ul class="text-xs space-y-1">
+                                <li>• SSD optimized</li>
+                                <li>• Encryption built-in</li>
+                                <li>• Snapshots support</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced MS Word Section -->
+        <section id="word" class="section hidden">
+            <div class="mobile-card">
+                <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4">📝 Microsoft Word - Complete Guide</h2>
+                
+                <div class="mobile-grid">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3 text-indigo-700">Word के Advanced Features</h3>
+                        <div class="space-y-3">
+                            <div class="bg-blue-50 p-3 rounded-lg border-l-4 border-blue-500">
+                                <h4 class="font-semibold text-blue-800 text-sm">📄 Document Creation</h4>
+                                <ul class="text-xs text-gray-700 mt-1 space-y-1">
+                                    <li>• Templates का उपयोग</li>
+                                    <li>• Page setup और margins</li>
+                                    <li>• Headers और Footers</li>
+                                    <li>• Page numbers insertion</li>
+                                </ul>
+                            </div>
+                            <div class="bg-green-50 p-3 rounded-lg border-l-4 border-green-500">
+                                <h4 class="font-semibold text-green-800 text-sm">🎨 Text Formatting</h4>
+                                <ul class="text-xs text-gray-700 mt-1 space-y-1">
+                                    <li>• Font family, size, color</li>
+                                    <li>• Bold, Italic, Underline</li>
+                                    <li>• Text alignment (Left, Center, Right, Justify)</li>
+                                    <li>• Line spacing और paragraph spacing</li>
+                                </ul>
+                            </div>
+                            <div class="bg-purple-50 p-3 rounded-lg border-l-4 border-purple-500">
+                                <h4 class="font-semibold text-purple-800 text-sm">📊 Advanced Objects</h4>
+                                <ul class="text-xs text-gray-700 mt-1 space-y-1">
+                                    <li>• Tables insertion और formatting</li>
+                                    <li>• Images और SmartArt</li>
+                                    <li>• Charts और graphs</li>
+                                    <li>• Shapes और text boxes</li>
+                                </ul>
+                            </div>
+                            <div class="bg-orange-50 p-3 rounded-lg border-l-4 border-orange-500">
+                                <h4 class="font-semibold text-orange-800 text-sm">🔍 Review Tools</h4>
+                                <ul class="text-xs text-gray-700 mt-1 space-y-1">
+                                    <li>• Spell check और Grammar check</li>
+                                    <li>• Track changes</li>
+                                    <li>• Comments और annotations</li>
+                                    <li>• Compare documents</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-semibold mb-3 mt-6 text-indigo-700">Word Shortcuts (Complete)</h3>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="mobile-grid">
+                                <div>
+                                    <h4 class="font-semibold text-sm mb-2 text-purple-700">📝 Text Formatting</h4>
+                                    <div class="space-y-1 text-xs">
+                                        <div class="flex justify-between">
+                                            <span>Bold</span>
+                                            <span class="shortcut-key">Ctrl + B</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Italic</span>
+                                            <span class="shortcut-key">Ctrl + I</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Underline</span>
+                                            <span class="shortcut-key">Ctrl + U</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Font Size +</span>
+                                            <span class="shortcut-key">Ctrl + ]</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Font Size -</span>
+                                            <span class="shortcut-key">Ctrl + [</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-sm mb-2 text-purple-700">📐 Alignment</h4>
+                                    <div class="space-y-1 text-xs">
+                                        <div class="flex justify-between">
+                                            <span>Left Align</span>
+                                            <span class="shortcut-key">Ctrl + L</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Center Align</span>
+                                            <span class="shortcut-key">Ctrl + E</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Right Align</span>
+                                            <span class="shortcut-key">Ctrl + R</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Justify</span>
+                                            <span class="shortcut-key">Ctrl + J</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Line Spacing</span>
+                                            <span class="shortcut-key">Ctrl + 1/2/5</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3 text-indigo-700">Word Interface (Realistic)</h3>
+                        <div class="office-realistic rounded-lg overflow-hidden">
+                            <div class="bg-blue-600 text-white p-2 text-sm font-semibold">
+                                📄 Document1 - Microsoft Word
+                            </div>
+                            
+                            <!-- Ribbon Interface -->
+                            <div class="bg-gray-100 p-2 text-xs border-b">
+                                <div class="flex space-x-4 mb-2">
+                                    <span class="font-semibold text-blue-600 border-b-2 border-blue-600 pb-1">Home</span>
+                                    <span class="text-gray-600 hover:text-blue-600 cursor-pointer">Insert</span>
+                                    <span class="text-gray-600 hover:text-blue-600 cursor-pointer">Design</span>
+                                    <span class="text-gray-600 hover:text-blue-600 cursor-pointer">Layout</span>
+                                    <span class="text-gray-600 hover:text-blue-600 cursor-pointer">References</span>
+                                    <span class="text-gray-600 hover:text-blue-600 cursor-pointer">Mailings</span>
+                                    <span class="text-gray-600 hover:text-blue-600 cursor-pointer">Review</span>
+                                    <span class="text-gray-600 hover:text-blue-600 cursor-pointer">View</span>
+                                </div>
+                                
+                                <!-- Toolbar -->
+                                <div class="flex items-center space-x-2 bg-white p-2 rounded border">
+                                    <button class="bg-gray-200 border px-2 py-1 rounded text-xs hover:bg-gray-300">📄</button>
+                                    <div class="border-l h-6"></div>
+                                    <button class="bg-white border px-2 py-1 rounded text-xs font-bold hover:bg-gray-100" onclick="formatWordText('bold')">B</button>
+                                    <button class="bg-white border px-2 py-1 rounded text-xs italic hover:bg-gray-100" onclick="formatWordText('italic')">I</button>
+                                    <button class="bg-white border px-2 py-1 rounded text-xs underline hover:bg-gray-100" onclick="formatWordText('underline')">U</button>
+                                    <div class="border-l h-6"></div>
+                                    <select class="border rounded px-2 py-1 text-xs">
+                                        <option>Calibri</option>
+                                        <option>Arial</option>
+                                        <option>Times New Roman</option>
+                                    </select>
+                                    <select class="border rounded px-2 py-1 text-xs">
+                                        <option>11</option>
+                                        <option>12</option>
+                                        <option>14</option>
+                                        <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96d95075b0058ee2',t:'MTc1NDkzMTg4OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
